@@ -1,3 +1,7 @@
+require('dotenv').config();  // Add this line at the top of index.js
+const HUGGINGFACE_TOKEN = `Bearer ${process.env.HUGGINGFACE_TOKEN}`;
+
+
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -7,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 const HUGGINGFACE_API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-3B";
-const HUGGINGFACE_TOKEN = "Bearer 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"; // <-- Replace with your real token
 
 app.post('/ask', async (req, res) => {
   const userMessage = req.body.message;
