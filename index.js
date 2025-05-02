@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const HUGGINGFACE_TOKEN = `Bearer ${process.env.HUGGINGFACE_TOKEN}`;
-const HUGGINGFACE_API_URL = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-0.5B-Instruct";
+const HUGGINGFACE_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
 app.post('/ask', async (req, res) => {
   const userMessage = req.body.message;
